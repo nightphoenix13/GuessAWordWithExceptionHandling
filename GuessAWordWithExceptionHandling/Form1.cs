@@ -26,7 +26,7 @@ namespace GuessAWordWithExceptionHandling
         private void submitButton_Click(object sender, EventArgs e)
         {
             // button variables
-            char letter,
+            char letter = ' ',
                  tempChar;
             bool letterInWord = false;
 
@@ -38,35 +38,50 @@ namespace GuessAWordWithExceptionHandling
             }
             else
             {
-                letter = Convert.ToChar(letterTextBox.Text.Substring(0, 1));
-                for (int x = 0; x < word.Length; ++x)
+                try
                 {
-                    tempChar = Convert.ToChar(word.Substring(x, 1));
-                    if (tempChar == letter)
+                    letter = Convert.ToChar(letterTextBox.Text.Substring(0, 1));
+                    if (!Char.IsLetter(letter))
                     {
-                        guessWord = guessWord.Substring(0, x) + letter + guessWord.Substring(x + 1, (guessWord.Length - 1 - x));
-                        word = word.Substring(0, x) + "?" + word.Substring(x + 1, (guessWord.Length - 1 - x));
-                        wordLabel.Text = "Word: " + guessWord;
-                        letterInWord = true;
-                    }
-                }
-                if (word == guessWord)
+                        throw new NonLetterException(letter);
+                    } // end if
+                    else
+                    {
+                        for (int x = 0; x < word.Length; ++x)
+                        {
+                            tempChar = Convert.ToChar(word.Substring(x, 1));
+                            if (tempChar == letter)
+                            {
+                                guessWord = guessWord.Substring(0, x) + letter + guessWord.Substring(x + 1, (guessWord.Length - 1 - x));
+                                word = word.Substring(0, x) + "?" + word.Substring(x + 1, (guessWord.Length - 1 - x));
+                                wordLabel.Text = "Word: " + guessWord;
+                                letterInWord = true;
+                            }
+                        }
+                        if (word == guessWord)
+                        {
+                            resultsLabel.Text = "You guessed the word!";
+                            resultsLabel.Visible = true;
+                            wordIsValid = false; // sets boolean to false when word is guessed correctly: makes user submit new word button to keep playing.
+                        }
+                        else if (letterInWord)
+                        {
+                            resultsLabel.Text = string.Format("The letter '{0}' is in the word.", letter);
+                            resultsLabel.Visible = true;
+                        }
+                        else
+                        {
+                            resultsLabel.Text = string.Format("The letter '{0}' is not in the word.", letter);
+                            resultsLabel.Visible = true;
+                        }
+                    } // end else
+                } // end try
+                catch (NonLetterException nle)
                 {
-                    resultsLabel.Text = "You guessed the word!";
-                    resultsLabel.Visible = true;
-                    wordIsValid = false; // sets boolean to false when word is guessed correctly: makes user submit new word button to keep playing.
-                }
-                else if (letterInWord)
-                {
-                    resultsLabel.Text = string.Format("The letter '{0}' is in the word.", letter);
-                    resultsLabel.Visible = true;
-                }
-                else
-                {
-                    resultsLabel.Text = string.Format("The letter '{0}' is not in the word.", letter);
-                    resultsLabel.Visible = true;
-                }
-
+                    MessageBox.Show(nle.Message, "Not A Letter",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    
+                    } // end catch
             }
 
         }

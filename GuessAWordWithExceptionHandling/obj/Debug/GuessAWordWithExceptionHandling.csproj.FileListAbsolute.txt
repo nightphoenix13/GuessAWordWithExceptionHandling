@@ -1,1 +1,8 @@
 C:\Users\Phoenix\Desktop\Tech & Coding Tools\Coding Projects\GuessAWordWithExceptionHandling\GuessAWordWithExceptionHandling\bin\Debug\GuessAWordWithExceptionHandling.exe.config
+C:\Users\Phoenix\Desktop\Tech & Coding Tools\Coding Projects\GuessAWordWithExceptionHandling\GuessAWordWithExceptionHandling\bin\Debug\GuessAWordWithExceptionHandling.exe
+C:\Users\Phoenix\Desktop\Tech & Coding Tools\Coding Projects\GuessAWordWithExceptionHandling\GuessAWordWithExceptionHandling\bin\Debug\GuessAWordWithExceptionHandling.pdb
+C:\Users\Phoenix\Desktop\Tech & Coding Tools\Coding Projects\GuessAWordWithExceptionHandling\GuessAWordWithExceptionHandling\obj\Debug\GuessAWordWithExceptionHandling.csprojResolveAssemblyReference.cache
+C:\Users\Phoenix\Desktop\Tech & Coding Tools\Coding Projects\GuessAWordWithExceptionHandling\GuessAWordWithExceptionHandling\obj\Debug\GuessAWordWithExceptionHandling.Properties.Resources.resources
+C:\Users\Phoenix\Desktop\Tech & Coding Tools\Coding Projects\GuessAWordWithExceptionHandling\GuessAWordWithExceptionHandling\obj\Debug\GuessAWordWithExceptionHandling.csproj.GenerateResource.Cache
+C:\Users\Phoenix\Desktop\Tech & Coding Tools\Coding Projects\GuessAWordWithExceptionHandling\GuessAWordWithExceptionHandling\obj\Debug\GuessAWordWithExceptionHandling.exe
+C:\Users\Phoenix\Desktop\Tech & Coding Tools\Coding Projects\GuessAWordWithExceptionHandling\GuessAWordWithExceptionHandling\obj\Debug\GuessAWordWithExceptionHandling.pdb
